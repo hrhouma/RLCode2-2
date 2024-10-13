@@ -4,6 +4,8 @@
 ## Exemple complet
 
 ```
+git clone https://github.com/hrhouma/RLCode2-2.git
+cd RLCode2-2
 python3 -m venv mountain_car (ici python3 et non python)
 mountain_car\Scripts\activate
 python nom_du_script.py  (Ici python et non python3)
