@@ -13,7 +13,7 @@ deactivate
 
 
 
-#1. `qlearning_agent.py`:
+# 1. `qlearning_agent.py`:
 
 ```python
 import numpy as np
@@ -58,7 +58,7 @@ class QLearningAgent:
         return rewards_per_episode
 ```
 
-#2. `helpers.py`:
+# 2. `helpers.py`:
 
 ```python
 import numpy as np
@@ -84,7 +84,7 @@ def discretize(state):
                         to_bin(velocity, velocity_bins)])
 ```
 
-#3. `main.py`:
+# 3. `main.py`:
 
 ```python
 import gym
@@ -207,7 +207,7 @@ if __name__ == "__main__":
     main()
 ```
 
-#4. `requirements.txt`:
+# 4. `requirements.txt`:
 
 ```
 numpy==1.23.5
