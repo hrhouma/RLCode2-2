@@ -7,6 +7,8 @@
 python3 -m venv mountain_car (ici python3 et non python)
 mountain_car\Scripts\activate
 python nom_du_script.py  (Ici python et non python3)
+pip install -r requirements.txt
+python main.py
 deactivate
 ```
 
