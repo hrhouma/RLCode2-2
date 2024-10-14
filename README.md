@@ -235,3 +235,88 @@ Cette solution va :
 4. Enfin, afficher des statistiques sur le taux de succès et le nombre moyen de pas pour chaque valeur d'alpha.
 
 Cette structure offre une démonstration visuelle et statistique de l'impact du taux d'apprentissage (alpha) sur les performances de l'agent Q-Learning dans l'environnement Mountain Car.
+
+
+---------------------------
+# Annexe :  🚗 **Projet MountainCar avec Q-Learning et Comparaison des Alphas** 🚗
+---------------------------
+
+## 🛠️ **Introduction**
+
+Ce projet utilise l'algorithme **Q-Learning** pour résoudre le problème du **MountainCar-v0** avec plusieurs valeurs de **taux d'apprentissage alpha (α)**. Il permet d'observer comment différentes valeurs d'**alpha** affectent les performances de l'agent lors de l'apprentissage. Le programme offre à la fois un rendu visuel avec **`pygame`** et des graphiques pour analyser les résultats.
+
+### 🔑 **Alpha (α) : Taux d'apprentissage**
+- **α** est un paramètre crucial dans l'algorithme Q-Learning. Il détermine l'importance accordée aux nouvelles expériences par rapport aux connaissances précédentes.
+- Le projet teste les valeurs suivantes : **0.1, 0.3, 0.5, 0.7, 0.9**.
+
+---
+
+## 🧠 **Explication du processus** :
+
+1. **Entraînement de l'agent avec différentes valeurs de α :**
+   - Chaque agent est entraîné à résoudre **MountainCar-v0** avec une valeur spécifique d'**alpha** pendant **1000 épisodes**. 
+   - L'objectif est d'atteindre le sommet de la colline en optimisant ses actions.
+
+2. **Évaluation des agents :**
+   - Une fois entraînés, les agents sont évalués sur **10 essais**. On mesure le nombre de pas nécessaires pour réussir et le taux de réussite (atteindre le sommet en moins de 200 pas).
+   
+3. **Visualisation en temps réel avec Pygame :**
+   - Un rendu **pygame** est généré où chaque agent est représenté par une voiture dans l'environnement. Chaque voiture agit selon l'agent entraîné avec une valeur spécifique d'**alpha**.
+   
+4. **Affichage des résultats :**
+   - À la fin de la simulation, deux graphiques sont générés :
+     1. **Récompenses cumulées pendant l'entraînement** pour chaque valeur d'**alpha**.
+     2. **Taux de réussite et moyenne des pas de temps** après l'évaluation pour chaque agent.
+
+---
+
+## 🖼️ **Ce que vous allez voir à la fin de l'exécution du code**
+
+### **1. Rendu visuel avec `pygame`**
+
+Dans la première partie, vous verrez un **rendu visuel dynamique** de plusieurs agents s'entraînant en parallèle avec différentes valeurs d'**alpha**.
+
+- Chaque voiture (point rouge) représente un agent, et chaque section de l'écran est dédiée à un **alpha** spécifique, comme **α = 0.1**, **α = 0.3**, **α = 0.5**, etc.
+- Vous pourrez observer comment chaque voiture se comporte en fonction de la valeur d'**alpha** pendant qu'elle tente de résoudre l'environnement MountainCar.
+
+### **2. Graphiques des résultats après l'évaluation**
+
+À la fin de l'exécution, deux graphiques seront générés :
+
+1. **Graphique du taux de succès** : Il montre le pourcentage d'essais réussis par chaque agent selon la valeur de son **alpha**.
+   - Exemple : **α = 0.3** semble obtenir le meilleur taux de succès dans ce cas.
+   
+2. **Graphique du nombre moyen de pas de temps** : Ce graphique montre combien de pas en moyenne l'agent prend pour réussir.
+   - Exemple : **α = 0.9** nécessite beaucoup plus de pas, ce qui signifie que l'agent n'a pas bien appris avec cette valeur.
+
+---
+
+## 📊 **Tableau de comparaison des performances des alphas (α)**
+
+Voici un tableau ASCII pour récapituler la **comparaison des performances** des différentes valeurs d'alpha en termes de taux de succès et du nombre moyen de pas nécessaires :
+
+```
++---------+----------------------+---------------------------+
+| Alpha   | Taux de réussite (%) | Nombre moyen de pas de temps|
++---------+----------------------+---------------------------+
+| α = 0.1 |        50%           |        ~1,500              |
+| α = 0.3 |        85%           |         150                |
+| α = 0.5 |        70%           |         300                |
+| α = 0.7 |        60%           |        ~500                |
+| α = 0.9 |        10%           |       > 10,000             |
++---------+----------------------+---------------------------+
+```
+
+### 📝 **Analyse :**
+- **α = 0.3** donne les meilleurs résultats avec un taux de réussite élevé et un faible nombre moyen de pas de temps.
+- **α = 0.9** montre que l'agent explore trop et n'arrive pas à stabiliser son apprentissage, nécessitant beaucoup trop de pas.
+- Les **alphas faibles**, comme **α = 0.1**, sont plus lents à apprendre mais montrent une certaine stabilité.
+
+---
+
+## 🏁 **Conclusion :**
+- **Rendu visuel en temps réel** : Vous verrez les agents en action pendant qu'ils essaient de résoudre le problème MountainCar, chaque agent ayant une stratégie différente en fonction de la valeur d'**alpha**.
+- **Graphiques de performance** : À la fin de l'exécution, des graphiques vous montreront les performances de chaque agent, en termes de **taux de réussite** et de **nombre de pas de temps** nécessaires pour réussir.
+
+Ces résultats vous permettront d'analyser comment différentes valeurs d'**alpha** influencent l'apprentissage et la performance des agents Q-Learning, vous offrant une **vue pédagogique claire** sur le rôle du **taux d'apprentissage** dans un environnement dynamique.
+
