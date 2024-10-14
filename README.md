@@ -238,19 +238,94 @@ Cette structure offre une démonstration visuelle et statistique de l'impact du 
 
 --------------
 
+
+### Ce que vous voyez dans les différentes images :
+
+
+### **1. Console : Log des exécutions d'expériences**
+
+
 ![image](https://github.com/user-attachments/assets/a80bab8e-1a12-422b-bc39-af6205c37d83)
 
---------------
+
+
+Cette capture montre les logs de la console pendant que le programme exécute les expériences avec différentes valeurs d'**alpha (α)**. Pour chaque valeur d'alpha, un agent est entraîné avec cette valeur de **taux d'apprentissage (α)**. Les logs indiquent les étapes suivantes :
+- **Running experiment with alpha = 0.1** : Démarrage de l'entraînement de l'agent avec α = 0.1.
+- **Running experiment with alpha = 0.3** et ainsi de suite jusqu'à **α = 0.9**.
+
+---
+
+### **2. Rendu visuel dans `pygame` : Comportement des agents avec différentes valeurs d'alpha**
+
 
 ![image](https://github.com/user-attachments/assets/30436b33-6064-4e80-9a35-8bda61537618)
 
---------------
+
+
+Cette image montre le **rendu visuel généré par `pygame`** pendant la simulation des agents dans l'environnement **MountainCar-v0**. Voici ce que vous voyez :
+- Chaque point rouge représente une voiture (agent) dans l'environnement.
+- Les agents sont alignés horizontalement, et chaque section est associée à une valeur spécifique d'**alpha** :
+  - **α = 0.1**
+  - **α = 0.3**
+  - **α = 0.5**
+  - **α = 0.7**
+  - **α = 0.9**
+- Les voitures se déplacent indépendamment dans chaque section en fonction de l'agent entraîné avec cette valeur d'alpha.
+
+Ce rendu permet de **visualiser en temps réel** comment chaque agent, avec son taux d'apprentissage, interagit avec l'environnement.
+
+---
+
+### **3. Graphique des performances du Q-Learning pour différentes valeurs d'alpha**
+
 
 ![image](https://github.com/user-attachments/assets/0b0a49f6-a8e2-4eda-b406-5b883190555a)
 
---------------
+
+Ce graphique montre la **performance des agents** pendant l'entraînement pour chaque valeur d'alpha (de **α = 0.1** à **α = 0.9**), mesurée en termes de **récompenses cumulées** au fil des épisodes. Voici ce que vous observez :
+- L'axe **des abscisses** (X) représente le nombre d'épisodes d'entraînement.
+- L'axe **des ordonnées** (Y) représente la récompense totale cumulée par l'agent au cours des épisodes. Plus la récompense est proche de zéro, mieux l'agent a performé.
+- Chaque courbe représente un agent entraîné avec une valeur d'**alpha** spécifique :
+  - **Courbe bleue** : α = 0.1
+  - **Courbe orange** : α = 0.3
+  - **Courbe verte** : α = 0.5
+  - **Courbe rouge** : α = 0.7
+  - **Courbe violette** : α = 0.9
+- **Interprétation** : Les valeurs d'alpha plus faibles (**α = 0.1** à **α = 0.5**) montrent une convergence plus rapide avec des récompenses plus stables. Par contre, les agents avec des valeurs d'alpha plus élevées (**α = 0.9**) montrent des résultats plus erratiques, avec des creux plus profonds et des récompenses moins stables, suggérant que ces agents explorent trop et apprennent moins efficacement.
+
+---
+
+### **4. Graphique de taux de succès et nombre moyen de pas pour différentes valeurs d'alpha**
+
+
 
 ![image](https://github.com/user-attachments/assets/6f168b68-7329-4400-8f00-24796e2e197f)
+
+Ce graphique se décompose en deux parties :
+
+1. **Taux de succès pour différentes valeurs d'alpha** (Graphique supérieur) :
+   - L'axe **des abscisses** (X) montre les différentes valeurs d'**alpha**.
+   - L'axe **des ordonnées** (Y) représente le **taux de succès** (proportion d'essais où l'agent a atteint le sommet en moins de 200 pas).
+   - On observe que :
+     - **α = 0.3** obtient le **meilleur taux de succès** (près de 90 %).
+     - **α = 0.1** et **α = 0.5** ont des taux de succès intermédiaires.
+     - **α = 0.9** a un très faible taux de succès, montrant que l'agent n'a pas appris efficacement.
+
+2. **Nombre moyen de pas de temps pour différentes valeurs d'alpha** (Graphique inférieur) :
+   - L'axe **des abscisses** (X) représente les valeurs d'**alpha**.
+   - L'axe **des ordonnées** (Y) montre le **nombre moyen de pas** nécessaires pour réussir les essais.
+   - On peut voir que :
+     - **α = 0.3** nécessite **le moins de pas**, ce qui signifie que l'agent a appris de manière efficace.
+     - **α = 0.9** nécessite **un nombre de pas très élevé**, suggérant que l'agent explore beaucoup mais ne parvient pas à apprendre efficacement.
+
+---
+
+### **Conclusion** :
+
+- **Rendu en temps réel (`pygame`)** : Vous observez les agents avec différentes valeurs d'alpha en action, chacun essayant de résoudre le problème **MountainCar**.
+- **Récompenses cumulées** : Le graphique des récompenses montre que des valeurs d'alpha modérées (comme **α = 0.3** et **α = 0.5**) produisent des résultats plus stables et permettent une meilleure convergence.
+- **Taux de succès et nombre de pas moyens** : **α = 0.3** semble être la meilleure valeur d'alpha, offrant le meilleur compromis entre exploration et exploitation, avec un taux de succès élevé et un nombre de pas réduit pour atteindre l'objectif.
+
 
 
 
