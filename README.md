@@ -236,11 +236,19 @@ Cette solution va :
 
 Cette structure offre une démonstration visuelle et statistique de l'impact du taux d'apprentissage (alpha) sur les performances de l'agent Q-Learning dans l'environnement Mountain Car.
 
+--------------
+
 ![image](https://github.com/user-attachments/assets/a80bab8e-1a12-422b-bc39-af6205c37d83)
+
+--------------
 
 ![image](https://github.com/user-attachments/assets/30436b33-6064-4e80-9a35-8bda61537618)
 
+--------------
+
 ![image](https://github.com/user-attachments/assets/0b0a49f6-a8e2-4eda-b406-5b883190555a)
+
+--------------
 
 ![image](https://github.com/user-attachments/assets/6f168b68-7329-4400-8f00-24796e2e197f)
 
